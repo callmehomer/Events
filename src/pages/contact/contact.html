@@ -6,15 +6,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
-  <button ion-button (click)="takePhoto()">Zrob zdjęcie</button>
+<ion-content padding class="share">
+  <section class="share">
 
-  <p><img src="{{ myPhoto }}"></p>
+
+    <h3>take picture and <br> <strong> share it with hashtag</strong> <br> #positiveemotions</h3>
+
+    <div class="img-preview">
+      <img *ngIf="myPhoto" [src]="myPhoto">
+    </div>
+
+    <ion-fab bottom right>
+      <button ion-fab (click)="takePhoto()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-fab>
+    <p>
+      <button ion-button center *ngIf="readyToShare" (click)="sharePhoto()" class="share-button">share</button>
+    </p>
+
+  </section>
 </ion-content>

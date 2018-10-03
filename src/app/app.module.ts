@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Camera } from '@ionic-native/camera';
+import { Instagram } from '@ionic-native/instagram';
+import { CameraPreview } from '@ionic-native/camera-preview';
 @NgModule({
   declarations: [
     MyApp,
@@ -36,7 +38,9 @@ import { Camera } from '@ionic-native/camera';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Camera
+    Camera,
+    CameraPreview,
+    Instagram
   ]
 })
 export class AppModule {}
